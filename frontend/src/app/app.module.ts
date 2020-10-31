@@ -1,30 +1,29 @@
+import { HttpModule } from '@angular/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
-import { InputTextModule } from 'primeng/components/inputtext/inputtext';
-import { ButtonModule } from 'primeng/components/button/button';
-import { DataTableModule } from 'primeng/components/datatable/datatable';
-import { TooltipModule } from 'primeng/components/tooltip/tooltip';
-
 import { AppComponent } from './app.component';
-import { LancamentosPesquisaComponent } from './lancamentos-pesquisa/lancamentos-pesquisa.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { PessoasPesquisaComponent } from './pessoas-pesquisa/pessoas-pesquisa.component';
+import { CoreModule } from './core/core.module';
+import { PessoasModule } from './pessoas/pessoas.module';
+import { LancamentosModule } from './lancamentos/lancamentos.module';
+import { SegurancaModule } from './seguranca/seguranca.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    LancamentosPesquisaComponent,
-    NavbarComponent,
-    PessoasPesquisaComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
-    InputTextModule,
-    ButtonModule,
-    DataTableModule,
-    TooltipModule
+    BrowserAnimationsModule,
+    HttpModule,
+
+    CoreModule,
+    LancamentosModule,
+    PessoasModule,
+    SegurancaModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
